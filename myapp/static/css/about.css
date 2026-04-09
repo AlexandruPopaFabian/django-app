@@ -1,0 +1,65 @@
+.text{
+    display: block;
+    margin: 10px; 
+    padding: 20px; 
+    margin-top: 10px; 
+    padding-bottom: 20px;
+    border: 1px solid;
+    border-color: black;
+    background-color: darkgray;
+}
+h1{
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+h1:hover{
+    color:green;
+    text-decoration: underline;
+}
+h2{
+    text-decoration: none;
+}
+h2:hover{
+    text-decoration: underline;
+}
+p{
+    transition: color 0.3s ease;
+    text-decoration: none;
+}  
+p:hover{
+    color : red;
+    text-decoration: underline;
+}
+.skills{
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+.skills:hover{
+    color:red;
+    text-decoration: underline;
+}
+.achievements{
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+.achievements:hover{
+    color:red;
+    text-decoration: underline;
+}
+@media screen and (min-width: 1024px) {
+    body{
+    width: 100%;
+    padding: 0 20px;
+    }
+}
+    @media screen and (max-width: 768px) {
+    body{
+    width: 100%;
+    padding: 0 20px;
+    }
+}
+    @media screen and (max-width: 480px) {
+    body{
+    color: white;
+    }
+}

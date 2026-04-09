@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Alexandru Popa Blog{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}?v=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+{% endblock %}
+
+{% block content %}
+<nav>
+    <label class="logo">Welcome to Alex Popa's Blog</label>
+</nav>
+
+<section>
+    <h2>Reviews</h2>
+    <ul>
+    {% for review in reviews %}
+        <li>
+        <p><strong>{{ review.email }}</strong> ({{ review.date }})</p>
+        <p>Rating: {{ review.rating }}</p>
+        <p>{{ review.comment }}</p>
+        <a href="{% url 'update_review' review.id %}">Update</a>
+        <a href="{% url 'delete_review' review.id %}">Delete</a>
+        </li>
+    {% endfor %}
+    </ul>
+    <a href="{% url 'submit_review' %}">Leave a Review</a>
+</section>
+<section>
+    {% for post in posts %}
+      <article class="article1">
+            <h2>{{ post.title }}</h2>
+            <h3>Posted on {{ post.post_date }}</h3>
+            <img src="{{ post.image.url }}" alt="{{ post.title }}" style="width:200px;height:200px;">
+            <p>{{ post.paragraph }}</p>
+            <a href="{% url 'post_detail' post.id %}">{{ post.title }}</a>
+        </article>
+    {% endfor %}
+       <footer>
+        <p>&copy; 2025 Alexandru Popa - Blog</p>
+       </footer>
+</section>
+{% endblock %}
+
+

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ post.title }}</title>
+<!-- Add links to CSS files or other static files here -->
+ <style>
+    h1{
+        color: blue;
+    }
+   .date:hover{
+    color:darkcyan
+   }
+   .paragraph{
+    color:black;
+    margin: 10px; 
+    padding: 20px; 
+    margin-top: 10px; 
+    padding-bottom: 20px;
+    border: 1px solid;
+    border-color: black;
+   }
+   .paragraph:hover{
+    color:blue;
+   }
+ </style>
+</head>
+<body>
+<h1>{{ post.title }}</h1>
+<p class="date">Posted on {{ post.post_date }}</p>
+<img src="{{ post.image.url }}" alt="{{ post.title }}" style="width:600px;height:400px;">
+<p class="paragraph">{{ post.paragraph }}</p>
+<!--Only show additional details for the post details page -->
+<p>{{ post.more_details_for_the_dedicated_page }}</p>
+</body>
+</html>

@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Alexandru Popa - About{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/about.css' %}">
+{% endblock %}
+
+{% block content %}
+<head>
+    <style>
+        footer{
+            color: darkblue;
+        }
+        h2{
+            color:blue;
+        }
+    </style>
+</head>
+<body class="body">
+    <main class="text">
+        <section>
+            <h2>About Me</h2>
+            <p>I am 20 years old and I am a computer science student.</p>
+        </section>
+        <section>
+            <h2>Education</h2>
+            <p><strong>Degree</strong> - Colegiul National Banatean, 2024</p>
+        </section>
+        <section>
+            <h2>Experience</h2>
+            <p><strong>Intern - Software Developer</strong> - Tech Innovators Inc., 2024</p>
+            <p><strong>Freelance Web Developer</strong> - 2023-Present</p>
+        </section>    
+        <section>
+            <h2 >Skills</h2>
+            <ul class="skills">
+                <li>Proficient in programming languages: Python, JavaScript, and C++.</li>
+                <li>Strong problem-solving and debugging skills.</li>
+            </ul>
+        </section>    
+        <section>
+            <h2 >Achievements</h2>
+            <ul class="achievements">
+                <li>Won 1st place in the National Coding Competition, 2024.</li>
+                <li>Developed a mobile app used by over 10,000 users, 2022.</li>
+            </ul>
+        </section> 
+    </main>   
+    <footer>
+        <p>&copy; 2025 Alexandru Popa - Blog</p>
+    </footer>
+</body>
+{% endblock %}

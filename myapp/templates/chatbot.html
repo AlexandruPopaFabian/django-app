@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Chatbot{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/chatbot.css' %}">
+{% endblock %}
+{% block content %}
+    <body>
+        <div class="chat-container" id="chat-container">
+        </div>
+        <form id="chat-form">
+        <input type="text" id="user-input" placeholder="Answer Here...">
+        <button type="submit">Trimite</button>
+        </form>
+    {% block extra_js %}
+        <script src="{%static 'js/chatbot.js' %}"></script>
+    {% endblock %}
+    </body>
+{% endblock %}

@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Form{% endblock %}
+<style>
+    div{
+        margin: 50px auto;
+        padding: 10px;
+        border: 1px solid;
+        border-color: black;
+        background-color: darkgray;
+    }
+
+    @media screen and (min-width: 1024px) {
+    form {
+        width: 60%;
+    }
+    }
+
+    @media screen and (max-width: 768px) {
+    form {
+        width: 90%;
+    }
+    }
+
+    @media screen and (max-width: 480px) {
+    form {
+        width: 100%;
+    }
+    }
+</style>
+{% block content %}
+<div>
+    <form action="#" method="post" onsubmit="return validateForm()">
+        <p>
+            <label>Salutation
+                <select id="salutation" name="salutation">
+                    <option value="">--None--</option>
+                    <option value="Mr.">Mr.</option>
+                    <option value="Ms.">Ms.</option>
+                    <option value="Mrs.">Mrs.</option>
+                    <option value="Dr.">Dr.</option>
+                    <option value="Prof.">Prof.</option>
+                </select> 
+            </label>
+        </p>
+        <p> <label>First name: <input id="prenume" name="firstName" /></label></p>
+        <p> <label>Last name: <input id="nume" name="lastName" /></label></p>
+        <p>Gender:</p>
+        <label><input type="radio" name="gender" value="male" /> Male</label>
+        <label><input type="radio" name="gender" value="female" /> Female</label>
+        <p><label>Email: <input id="email" type="email" name="email" /></label></p>
+        <p><label>Date of Birth: <input id="data_nasterii" type="date" name="birthDate"></label></p>
+        <p><label>Address: <textarea id="adresa" name="address" cols="30" rows="3"></textarea></label></p>
+        <p>Interests:</p>
+        <input type="checkbox" id="interest1" name="interest" value="Sports">
+        <label for="interest"> Sports</label><br>
+        <input type="checkbox" id="interest2" name="interest" value="Music">
+        <label for="interest"> Music</label><br>
+        <input type="checkbox" id="interest3" name="interest" value="Movies">
+        <label for="interest"> Movies</label><br>
+        <p>Profile Picture: <input id="poza_profil" type="file" name="profilePicture"></p>
+        <p>Upload CV (PDF only): <input id="cv" type="file" name="cv" accept="application/pdf"></p>
+        <p>Communication preferences:</p>
+        <input type="checkbox" id="pref1" name="pref1" value="Email">
+        <label for="pref1"> Email</label><br>
+        <input type="checkbox" id="pref2" name="pref2" value="SMS">
+        <label for="pref2"> SMS</label><br>
+        <p><button type="submit">Submit</button></p>
+    </form>
+</div>
+    {% block extra_js %}
+        <script src="{%static 'js/form.js' %}"></script>
+    {% endblock %}
+{% endblock %}
